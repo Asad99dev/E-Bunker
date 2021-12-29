@@ -1,0 +1,26 @@
+.nav-item .dropdown-menu {
+  background: #424a52;
+}
+
+.nav-item .dropdown-item:hover {
+  background: #343a40;
+}
+
+.home-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  font-family: "PT Sans", sans-serif;
+}
+
+.nav-link {
+  font-family: "PT Sans", sans-serif;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
