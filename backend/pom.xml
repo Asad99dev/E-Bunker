@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>e-bunker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>e-bunker-backend</name>
-	<description>Backend for e-bunker react app</description>
+	<name>e-bunker</name>
+	<description>Backend for E-Bunker</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
