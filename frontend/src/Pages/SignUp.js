@@ -1,9 +1,16 @@
 import React from "react";
+import { Container } from "react-bootstrap";
+import SignUpForm from "../Components/SignUpForm";
 
 function SignUp() {
   return (
     <div>
-      <h2>Hello</h2>
+    <br/>
+    <br/>
+
+    <Container>
+      <SignUpForm />
+      </Container>
     </div>
   );
 }

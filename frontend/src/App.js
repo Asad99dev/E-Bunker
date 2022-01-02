@@ -25,6 +25,7 @@ function App() {
           <Route path="/phishing-learn" element={<PhishingLearn />} />
           <Route path="/phishing-quiz" element={<PhishingQuiz />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </Router>
     </>
