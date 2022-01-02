@@ -1,9 +1,16 @@
 import React from "react";
+import { Container } from "react-bootstrap";
+import SignInForm from "../Components/SignInForm";
 
 function SignIn() {
   return (
     <div>
-      <h2>Hello</h2>
+    <br/>
+    <br/>
+
+    <Container>
+      <SignInForm />
+      </Container>
     </div>
   );
 }
