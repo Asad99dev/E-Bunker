@@ -1,13 +1,13 @@
-package com.example.ebunker;
+package com.ebunker.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EBunkerApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EBunkerApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }

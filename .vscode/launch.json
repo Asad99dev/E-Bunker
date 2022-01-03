@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BackendApplication",
+            "request": "launch",
+            "mainClass": "com.ebunker.backend.BackendApplication",
+            "projectName": "e-bunker"
+        },
+        {
+            "type": "java",
+            "name": "Launch EBunkerApplication",
+            "request": "launch",
+            "mainClass": "com.example.ebunker.EBunkerApplication",
+            "projectName": "e-bunker"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-EBunkerApplication<demo>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
