@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import logo from "../Images/logo.svg";
 import "./Navbar.css";
 
 function Navigation() {
@@ -16,10 +17,11 @@ function Navigation() {
     >
       <Container>
         <Navbar.Brand>
-          <Link to="/" className="home-link" onClick={() => setExpanded(false)}>
-            <i class="fas fa-user-shield" /> E-Bunker
+          <Link to="/" onClick={() => setExpanded(false)}>
+            <img src={logo} alt="logo" width="150px" height="50px" />
           </Link>
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           onClick={() => setExpanded(!expanded)}
@@ -33,30 +35,47 @@ function Navigation() {
             >
               Home
             </Link>
-            <NavDropdown title="Phishing" id="basic-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/phishing-learn" className="nav-link" onClick={() => setExpanded(false)}>
-                  Learn 
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/phishing-quiz" className="nav-link" onClick={() => setExpanded(false)}>
-                  Quiz
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Malware" id="basic-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/malware-learn" className="nav-link" onClick={() => setExpanded(false)}>
-                  Learn
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/malware-quiz" className="nav-link" onClick={() => setExpanded(false)}>
-                  Quiz
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+
+            <Link
+              to="/phishing"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
+              Phishing
+            </Link>
+
+            <Link
+              to="/malware"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
+              Malware
+            </Link>
+
+            <Link
+              to="/atktarget"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
+              Targeted Attacks
+            </Link>
+
+            <Link
+              to="/safe-online"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
+              Staying safe online
+            </Link>
+
+            <Link
+              to="/protected"
+              className="nav-link"
+              onClick={() => setExpanded(false)}
+            >
+              How protected are you?
+            </Link>
+
             <Link
               to="/about"
               className="nav-link"

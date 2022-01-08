@@ -1,6 +1,6 @@
 import React from "react";
 
-function PhishingLearn() {
+function HowProtected() {
   return (
     <div>
       <h2>Hello</h2>
@@ -8,4 +8,4 @@ function PhishingLearn() {
   );
 }
 
-export default PhishingLearn;
+export default HowProtected;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function PhishingQuiz() {
+function Phishing() {
   return (
     <div>
       <h2>Hello</h2>
@@ -8,4 +8,4 @@ function PhishingQuiz() {
   );
 }
 
-export default PhishingQuiz;
+export default Phishing;

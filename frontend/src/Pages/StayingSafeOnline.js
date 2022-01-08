@@ -1,6 +1,6 @@
 import React from "react";
 
-function MalwareQuiz() {
+function StayingSafeOnline() {
   return (
     <div>
       <h2>Hello</h2>
@@ -8,4 +8,4 @@ function MalwareQuiz() {
   );
 }
 
-export default MalwareQuiz;
+export default StayingSafeOnline;
