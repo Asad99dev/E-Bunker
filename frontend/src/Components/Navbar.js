@@ -29,14 +29,6 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Link
-              to="/"
-              className="nav-link"
-              onClick={() => setExpanded(false)}
-            >
-              Home
-            </Link>
-
-            <Link
               to="/phishing"
               className="nav-link"
               onClick={() => setExpanded(false)}
