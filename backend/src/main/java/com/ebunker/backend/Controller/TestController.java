@@ -15,6 +15,12 @@ public class TestController {
         return "This content is available for everyone.";
     }
 
+    @GetMapping("/admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public String adminAccess() {
+        return "Admin Board.";
+    }
+
     @GetMapping("/user")
     @PreAuthorize("hasRole('USER')")
     public String userAccess() {
