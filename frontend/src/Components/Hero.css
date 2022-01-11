@@ -1,0 +1,57 @@
+.logo {
+  height: 300px;
+  width: 400px;
+
+}
+
+.hero-container {
+  background-image: url(../Images/background.svg);
+  background-repeat: repeat;
+  background-size: 100vw auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.hero-container > h1 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 32px;
+}
+
+.hero-container > p {
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+}
+
+.hero-btns {
+  margin-top: 16px;
+}
+
+.hero-btns .btn-hero {
+  margin: 24px;
+}
+
+.btn-hero {
+  font-size: 30px;
+  background-color: transparent;
+  border: 4px solid #808080;
+  border-radius: 9px;
+  font-family: "PT Sans", sans-serif;
+  padding: 8px 20px;
+  transition-duration: 0.4s;
+}
+
+.btn-hero:hover {
+  background-color: #808080;
+  color: #fff;
+}
+
+@media (orientation: portrait) {
+  .hero-container {
+      background-size: auto 100vh;
+  }
+}
