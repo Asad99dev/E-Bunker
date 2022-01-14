@@ -28,6 +28,7 @@ function Footer() {
           {/*Column 3*/}
           <div className="col-md-3 col-sm-6">
             <ul className="list-unstyled">
+            <br />
             <Link to="/protected" className="nav-link">How protected are you?</Link>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/sign-in" className="nav-link">Sign In</Link>
