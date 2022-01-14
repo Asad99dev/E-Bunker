@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./Components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./Components/Footer";
 
 import About from "./Pages/About.js";
 import Malware from "./Pages/Malware.js";
@@ -12,7 +13,6 @@ import SignUp from "./Pages/SignUp.js";
 import TargetedAttacks from "./Pages/TargetedAttacks.js";
 import StayingSafeOnline from "./Pages/StayingSafeOnline.js";
 import HowProtected from "./Pages/HowProtected.js";
-import Hero from "./Components/Hero";
 import Home from "./Pages/Home";
 
 function App() {
@@ -32,6 +32,8 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
+
+        <Footer />
       </Router>
     </>
   );

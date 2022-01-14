@@ -12,7 +12,7 @@ function Navigation() {
       bg="dark"
       expand="lg"
       variant="dark"
-      sticky="top"
+    
       expanded={expanded}
     >
       <Container>
