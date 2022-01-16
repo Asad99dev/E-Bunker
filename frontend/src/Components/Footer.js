@@ -18,21 +18,35 @@ function Footer() {
           <div className="col-md-3 col-sm-6">
             <h4>Quick Links</h4>
             <ul className="list-unstyled">
-              <Link to="/phishing" className="nav-link">Phishing</Link>
-              <Link to="/malware" className="nav-link">Malware</Link>
-              <Link to="/atktarget" className="nav-link">Targeted Attacks</Link>
-              <Link to="/safe-online" className="nav-link">Staying safe online</Link>
-          
+              <Link to="/phishing" className="nav-link">
+                Phishing
+              </Link>
+              <Link to="/malware" className="nav-link">
+                Malware
+              </Link>
+
+              <Link to="/safe-online" className="nav-link">
+                Staying safe online
+              </Link>
+              <Link to="/protected" className="nav-link">
+                How protected are you?
+              </Link>
             </ul>
           </div>
           {/*Column 3*/}
           <div className="col-md-3 col-sm-6">
             <ul className="list-unstyled">
-            <br />
-            <Link to="/protected" className="nav-link">How protected are you?</Link>
-            <Link to="/about" className="nav-link">About</Link>
-            <Link to="/sign-in" className="nav-link">Sign In</Link>
-            <Link to="/sign-up" className="nav-link">Sign Up</Link>
+              <br />
+
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
+              <Link to="/sign-in" className="nav-link">
+                Sign In
+              </Link>
+              <Link to="/sign-up" className="nav-link">
+                Sign Up
+              </Link>
             </ul>
           </div>
         </div>

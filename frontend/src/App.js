@@ -12,12 +12,14 @@ import MalwareQuiz from "./Pages/MalwareQuiz"
 import Phishing from "./Pages/Phishing.js";
 import PhishingLearn from "./Pages/PhishingLearn.js";
 import PhishingQuiz from "./Pages/PhishingQuiz.js";
+import PhishingExamples from "./Pages/PhishingExamples.js";
 import SignIn from "./Pages/SignIn.js";
 import SignUp from "./Pages/SignUp.js";
-import TargetedAttacks from "./Pages/TargetedAttacks.js";
+
 import StayingSafeOnline from "./Pages/StayingSafeOnline.js";
 import HowProtected from "./Pages/HowProtected.js";
 import Home from "./Pages/Home";
+{/*import TargetedAttacks from "./Pages/TargetedAttacks.js";*/}
 
 function App() {
   return (
@@ -34,7 +36,8 @@ function App() {
           <Route path="/phishing" element={<Phishing />} />
           <Route path="/phishing-learn" element={<PhishingLearn />} />
           <Route path="/phishing-quiz" element={<PhishingQuiz />} />
-          <Route path="/atktarget" element={<TargetedAttacks />} />
+          <Route path="/phishing-examples" element={<PhishingExamples />} />
+          {/*<Route path="/atktarget" element={<TargetedAttacks />} />*/}
           <Route path="/safe-online" element={<StayingSafeOnline />} />
           <Route path="/protected" element={<HowProtected />} />
           <Route path="/sign-in" element={<SignIn />} />

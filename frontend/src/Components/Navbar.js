@@ -44,13 +44,13 @@ function Navigation() {
               Malware
             </Link>
 
-            <Link
+            {/*<Link
               to="/atktarget"
               className="nav-link"
               onClick={() => setExpanded(false)}
             >
               Targeted Attacks
-            </Link>
+            </Link>*/}
 
             <Link
               to="/safe-online"
