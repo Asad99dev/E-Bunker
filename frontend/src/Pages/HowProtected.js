@@ -2,8 +2,8 @@ import React from "react";
 
 function HowProtected() {
   return (
-    <div>
-      <h2>Hello</h2>
+    <div className="pg-container">
+      <h1>How protected are you?</h1>
     </div>
   );
 }

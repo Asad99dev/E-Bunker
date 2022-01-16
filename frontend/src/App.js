@@ -15,8 +15,9 @@ import PhishingQuiz from "./Pages/PhishingQuiz.js";
 import PhishingExamples from "./Pages/PhishingExamples.js";
 import SignIn from "./Pages/SignIn.js";
 import SignUp from "./Pages/SignUp.js";
-
 import StayingSafeOnline from "./Pages/StayingSafeOnline.js";
+import SSOLearn from "./Pages/SSOLearn.js";
+import SSOQuiz from "./Pages/SSOQuiz.js";
 import HowProtected from "./Pages/HowProtected.js";
 import Home from "./Pages/Home";
 {/*import TargetedAttacks from "./Pages/TargetedAttacks.js";*/}
@@ -39,6 +40,8 @@ function App() {
           <Route path="/phishing-examples" element={<PhishingExamples />} />
           {/*<Route path="/atktarget" element={<TargetedAttacks />} />*/}
           <Route path="/safe-online" element={<StayingSafeOnline />} />
+          <Route path="/sso-learn" element={<SSOLearn />} />
+          <Route path="/sso-quiz" element={<SSOQuiz />} />
           <Route path="/protected" element={<HowProtected />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />

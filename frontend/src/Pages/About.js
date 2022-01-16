@@ -2,8 +2,8 @@ import React from "react";
 
 function About() {
   return (
-    <div>
-      <h2>This is a test</h2>
+    <div className="pg-container">
+      <h1>About us</h1>
     </div>
   );
 }
