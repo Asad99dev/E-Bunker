@@ -33,6 +33,22 @@ function Phishing() {
           label="Quiz"
         />
       </div>
+
+      <br />
+
+      <p>
+        Click the link below to see examples of phishing and also to upload your
+        own attempts.
+      </p>
+      <div className="bg-btns">
+        <Button
+          className="btn-bg"
+          handleClick={() => {
+            navigate("/phishing-examples");
+          }}
+          label="Examples"
+        />
+      </div>
     </div>
   );
 }
