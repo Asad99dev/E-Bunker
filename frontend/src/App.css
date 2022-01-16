@@ -49,8 +49,37 @@
     color: #fff;
   }
 
+  .pg-container {
+    background-image: url(./Images/background.svg);
+    background-repeat: repeat;
+    background-size: 100vw auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+  
+  .pg-container > h1 {
+    font-family: "PT Sans", sans-serif;
+    font-size: 24px;
+    margin-top: 0px;
+  }
+  
+  .pg-container > p {
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    padding: 4px 10px;
+  }
+
   @media (orientation: portrait) {
     .bg-container {
         background-size: auto 100vh;
     }
+
+    .pg-container {
+      background-size: auto 100vh;
+  }
   }
