@@ -72,6 +72,9 @@
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
     padding: 4px 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    
   }
 
   @media (orientation: portrait) {
