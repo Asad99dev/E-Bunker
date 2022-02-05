@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @GetMapping("/all")
     public String allAccess() {
-        return "This content is available for everyone.";
+        return "Anyone can see this page";
     }
 
     @GetMapping("/admin")
     @PreAuthorize("hasRole('ADMIN')")
     public String adminAccess() {
-        return "Admin Board.";
+        return "Admin dashboard.";
     }
 
     @GetMapping("/user")
     @PreAuthorize("hasRole('USER')")
     public String userAccess() {
-        return "This content is only available for registered users.";
+        return "Only registered users can see this page";
     }
 
 }
