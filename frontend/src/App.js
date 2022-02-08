@@ -20,7 +20,8 @@ import SSOLearn from "./Pages/SSOLearn.js";
 import SSOQuiz from "./Pages/SSOQuiz.js";
 import HowProtected from "./Pages/HowProtected.js";
 import Home from "./Pages/Home";
-{/*import TargetedAttacks from "./Pages/TargetedAttacks.js";*/}
+import Profile from "./Components/Profile";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   return (
@@ -38,11 +39,12 @@ function App() {
           <Route path="/phishing-learn" element={<PhishingLearn />} />
           <Route path="/phishing-quiz" element={<PhishingQuiz />} />
           <Route path="/phishing-examples" element={<PhishingExamples />} />
-          {/*<Route path="/atktarget" element={<TargetedAttacks />} />*/}
+          <Route path="/profile" element={<Profile />} />
           <Route path="/safe-online" element={<StayingSafeOnline />} />
           <Route path="/sso-learn" element={<SSOLearn />} />
           <Route path="/sso-quiz" element={<SSOQuiz />} />
           <Route path="/protected" element={<HowProtected />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>

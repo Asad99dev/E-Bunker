@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import AuthService from "../Services/auth.service";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../Images/logo.svg";
 import "./Navbar.css";
 
-function Navigation() {
+const Navigation = () => {
   const [expanded, setExpanded] = useState(false);
+  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  const [currentUser, setCurrentUser] = useState(undefined);
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+    if (user) {
+      setCurrentUser(user);
+      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+    }
+  }, []);
+  const logOut = () => {
+    AuthService.logout();
+    setCurrentUser(undefined)
+    setShowAdminBoard(undefined)
+  };
 
   return (
-    <Navbar
-      bg="dark"
-      expand="lg"
-      variant="dark"
-    
-      expanded={expanded}
-    >
+    <Navbar bg="dark" expand="lg" variant="dark" expanded={expanded}>
       <Container>
         <Navbar.Brand>
           <Link to="/" onClick={() => setExpanded(false)}>
@@ -27,7 +36,7 @@ function Navigation() {
           onClick={() => setExpanded(!expanded)}
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="me-auto">
             <Link
               to="/phishing"
               className="nav-link"
@@ -43,14 +52,6 @@ function Navigation() {
             >
               Malware
             </Link>
-
-            {/*<Link
-              to="/atktarget"
-              className="nav-link"
-              onClick={() => setExpanded(false)}
-            >
-              Targeted Attacks
-            </Link>*/}
 
             <Link
               to="/safe-online"
@@ -68,6 +69,12 @@ function Navigation() {
               How protected are you?
             </Link>
 
+            {showAdminBoard && (
+              <Link to="/dashboard" className="nav-link">
+                Dashboard
+              </Link>
+            )}
+
             <Link
               to="/about"
               className="nav-link"
@@ -75,18 +82,43 @@ function Navigation() {
             >
               About
             </Link>
-            <Link
-              to="/sign-in"
-              className="nav-link"
-              onClick={() => setExpanded(false)}
-            >
-              Sign In
-            </Link>
           </Nav>
+          {currentUser ? (
+            <Nav>
+              <Link
+                to="/profile"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
+                {currentUser.username}
+              </Link>
+              <Link to="/" className="nav-link" onClick={logOut}>
+                Sign Out
+              </Link>
+            </Nav>
+          ) : (
+            <Nav>
+              <Link
+                to="/sign-in"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
+                Sign In
+              </Link>
+
+              <Link
+                to="/sign-up"
+                className="nav-link"
+                onClick={() => setExpanded(false)}
+              >
+                Sign Up
+              </Link>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default Navigation;

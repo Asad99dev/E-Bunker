@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import SignInForm from "../Components/SignInForm";
+import "../App.css";
 
 function SignIn() {
   return (
-    <div>
+    <div className="bg-container">
     <br/>
     <br/>
 

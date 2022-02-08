@@ -1,88 +1,126 @@
 .bg-container {
-    background-image: url(./Images/background.svg);
-    background-repeat: repeat;
-    background-size: 100vw auto;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
+  background-image: url(./Images/background.svg);
+  background-repeat: repeat;
+  background-size: 100vw auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
 }
-  
-  .bg-container > h1 {
-    font-family: "PT Sans", sans-serif;
-    font-size: 60px;
-    margin-top: 0px;
-  }
-  
-  .bg-container > p {
-    font-family: "PT Sans", sans-serif;
-    font-size: 18px;
-    padding: 4px 10px;
-  }
-  
-  .bg-btns {
-    margin-top: 0px;
-  }
-  .bg-btns {
-    margin-top: 0px;
-  }
-  
-  .bg-btns .btn-bg {
-    margin: 24px;
-  }
-  
-  .btn-bg {
-    font-size: 24px;
-    background-color: transparent;
-    border: 4px solid #808080;
-    border-radius: 9px;
-    font-family: "PT Sans", sans-serif;
-    padding: 8px 20px;
-    transition-duration: 0.4s;
-  }
-  
-  .btn-bg:hover {
-    background-color: #808080;
-    color: #fff;
+
+.bg-container > h1 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 60px;
+  margin-top: 0px;
+}
+
+.bg-container > p {
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  padding: 4px 10px;
+}
+
+.bg-btns {
+  margin-top: 0px;
+}
+.bg-btns {
+  margin-top: 0px;
+}
+
+.bg-btns .btn-bg {
+  margin: 24px;
+}
+
+.btn-bg {
+  font-size: 24px;
+  background-color: transparent;
+  border: 4px solid #808080;
+  border-radius: 9px;
+  font-family: "PT Sans", sans-serif;
+  padding: 8px 20px;
+  transition-duration: 0.4s;
+}
+
+.btn-bg:hover {
+  background-color: #808080;
+  color: #fff;
+}
+
+.pg-container {
+  background-image: url(./Images/background.svg);
+  background-repeat: repeat;
+  background-size: 100vw auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.pg-container > h1 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+.pg-container > p {
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  padding: 4px 10px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+@media (orientation: portrait) {
+  .bg-container {
+    background-size: auto 100vh;
   }
 
   .pg-container {
-    background-image: url(./Images/background.svg);
-    background-repeat: repeat;
-    background-size: 100vw auto;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
+    background-size: auto 100vh;
+  }
 }
-  
-  .pg-container > h1 {
-    font-family: "PT Sans", sans-serif;
-    font-size: 30px;
-    margin-top: 0px;
-  }
-  
-  .pg-container > p {
-    font-family: "PT Sans", sans-serif;
-    font-size: 18px;
-    padding: 4px 10px;
-    margin-left: 15%;
-    margin-right: 15%;
-    
-  }
 
-  @media (orientation: portrait) {
-    .bg-container {
-        background-size: auto 100vh;
-    }
+label {
+  display: block;
+  margin-top: 10px;
+}
 
-    .pg-container {
-      background-size: auto 100vh;
-  }
-  }
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.divider{
+  width:110px;
+  height:auto;
+  display:inline-block;
+}

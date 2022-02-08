@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import SignUpForm from "../Components/SignUpForm";
+import "../App.css";
 
 function SignUp() {
   return (
-    <div>
+    <div className="bg-container">
     <br/>
     <br/>
 
