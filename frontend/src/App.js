@@ -7,20 +7,17 @@ import Footer from "./Components/Footer";
 
 import About from "./Pages/About.js";
 import Malware from "./Pages/Malware.js";
-import MalwareLearn from "./Pages/MalwareLearn"
-import MalwareQuiz from "./Pages/MalwareQuiz"
+import MalwareLearn from "./Pages/MalwareLearn";
+import MalwareQuiz from "./Pages/MalwareQuiz";
 import Phishing from "./Pages/Phishing.js";
 import PhishingLearn from "./Pages/PhishingLearn.js";
 import PhishingQuiz from "./Pages/PhishingQuiz.js";
 import PhishingExamples from "./Pages/PhishingExamples.js";
 import SignIn from "./Pages/SignIn.js";
 import SignUp from "./Pages/SignUp.js";
-import StayingSafeOnline from "./Pages/StayingSafeOnline.js";
-import SSOLearn from "./Pages/SSOLearn.js";
-import SSOQuiz from "./Pages/SSOQuiz.js";
 import HowProtected from "./Pages/HowProtected.js";
 import Home from "./Pages/Home";
-import Profile from "./Components/Profile";
+import Profile from "./Pages/Profile.js";
 import Dashboard from "./Pages/Dashboard";
 
 function App() {
@@ -40,9 +37,6 @@ function App() {
           <Route path="/phishing-quiz" element={<PhishingQuiz />} />
           <Route path="/phishing-examples" element={<PhishingExamples />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/safe-online" element={<StayingSafeOnline />} />
-          <Route path="/sso-learn" element={<SSOLearn />} />
-          <Route path="/sso-quiz" element={<SSOQuiz />} />
           <Route path="/protected" element={<HowProtected />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sign-in" element={<SignIn />} />

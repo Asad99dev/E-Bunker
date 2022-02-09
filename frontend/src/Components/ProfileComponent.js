@@ -1,6 +1,6 @@
 import React from "react";
 import AuthService from "../Services/auth.service";
-const Profile = () => {
+const ProfileComponent = () => {
   const currentUser = AuthService.getCurrentUser();
   return (
     <div className="container">
@@ -27,4 +27,4 @@ const Profile = () => {
     </div>
   );
 };
-export default Profile;
+export default ProfileComponent;

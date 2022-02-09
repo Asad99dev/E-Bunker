@@ -18,8 +18,8 @@ const Navigation = () => {
   }, []);
   const logOut = () => {
     AuthService.logout();
-    setCurrentUser(undefined)
-    setShowAdminBoard(undefined)
+    setCurrentUser(undefined);
+    setShowAdminBoard(undefined);
   };
 
   return (
@@ -52,15 +52,7 @@ const Navigation = () => {
             >
               Malware
             </Link>
-
-            <Link
-              to="/safe-online"
-              className="nav-link"
-              onClick={() => setExpanded(false)}
-            >
-              Staying safe online
-            </Link>
-
+            
             <Link
               to="/protected"
               className="nav-link"

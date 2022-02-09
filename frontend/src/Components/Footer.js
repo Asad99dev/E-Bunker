@@ -25,9 +25,6 @@ function Footer() {
                 Malware
               </Link>
 
-              <Link to="/safe-online" className="nav-link">
-                Staying safe online
-              </Link>
               <Link to="/protected" className="nav-link">
                 How protected are you?
               </Link>

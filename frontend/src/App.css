@@ -76,16 +76,6 @@
   margin-right: 15%;
 }
 
-@media (orientation: portrait) {
-  .bg-container {
-    background-size: auto 100vh;
-  }
-
-  .pg-container {
-    background-size: auto 100vh;
-  }
-}
-
 label {
   display: block;
   margin-top: 10px;
@@ -124,3 +114,15 @@ label {
   height:auto;
   display:inline-block;
 }
+
+
+@media (orientation: portrait) {
+  .bg-container {
+    background-size: auto 100vh;
+  }
+
+  .pg-container {
+    background-size: auto 100vh;
+  }
+}
+
