@@ -287,6 +287,384 @@ export default function Survey() {
               </div>
             </td>
           </tr>
+          <tr>
+          <td>I create regular backups of my files.</td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="1"
+                  name="q5"
+                  checked={state.q5 === "1"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="2"
+                  name="q5"
+                  checked={state.q5 === "2"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="3"
+                  name="q5"
+                  checked={state.q5 === "3"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="4"
+                  name="q5"
+                  checked={state.q5 === "4"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="5"
+                  name="q5"
+                  checked={state.q5 === "5"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+          <td>I keep my social media private.</td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="1"
+                  name="q6"
+                  checked={state.q6 === "1"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="2"
+                  name="q6"
+                  checked={state.q6 === "2"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="3"
+                  name="q6"
+                  checked={state.q6 === "3"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="4"
+                  name="q6"
+                  checked={state.q6 === "4"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="5"
+                  name="q6"
+                  checked={state.q6 === "5"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+          <td>I keep my software updated.</td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="1"
+                  name="q7"
+                  checked={state.q7 === "1"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="2"
+                  name="q7"
+                  checked={state.q7 === "2"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="3"
+                  name="q7"
+                  checked={state.q7 === "3"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="4"
+                  name="q7"
+                  checked={state.q7 === "4"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="5"
+                  name="q7"
+                  checked={state.q7 === "5"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+          <td>I download only from trusted sites and platforms.</td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="1"
+                  name="q8"
+                  checked={state.q8 === "1"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="2"
+                  name="q8"
+                  checked={state.q8 === "2"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="3"
+                  name="q8"
+                  checked={state.q8 === "3"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="4"
+                  name="q8"
+                  checked={state.q8 === "4"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="5"
+                  name="q8"
+                  checked={state.q8 === "5"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+          <td>I never give out sensitive information.</td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="1"
+                  name="q9"
+                  checked={state.q9 === "1"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="2"
+                  name="q9"
+                  checked={state.q9 === "2"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="3"
+                  name="q9"
+                  checked={state.q9 === "3"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="4"
+                  name="q9"
+                  checked={state.q9 === "4"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="5"
+                  name="q9"
+                  checked={state.q9 === "5"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+          </tr>
+          <tr>
+          <td>I am aware of recent data breaches and check to see if I was affected.</td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="1"
+                  name="q10"
+                  checked={state.q10 === "1"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="2"
+                  name="q10"
+                  checked={state.q10 === "2"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="3"
+                  name="q10"
+                  checked={state.q10 === "3"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="4"
+                  name="q10"
+                  checked={state.q10 === "4"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+            <td>
+              {" "}
+              <div>
+                <input
+                  type="radio"
+                  value="5"
+                  name="q10"
+                  checked={state.q10 === "5"}
+                  onChange={handleChange}
+                />
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
     </form>
