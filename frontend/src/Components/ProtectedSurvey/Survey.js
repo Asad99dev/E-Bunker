@@ -10,21 +10,24 @@ export default function Survey() {
     q7: "",
     q8: "",
     q9: "",
-    q10: ""
+    q10: "",
   });
- 
 
   function handleChange(event) {
     const value = event.target.value;
     setState({
       ...state,
-      [event.target.name]: value
+      [event.target.name]: value,
     });
   }
 
+  function formSubmit(event) {
+    event.preventDefault();
+    console.log(state.q1, state.q2, state.q3, state.q4, state.q5, state.q6, state.q7, state.q8, state.q9, state.q10)
+  }
 
   return (
-    <form>
+    <form noValidate>
       <table>
         <tbody>
           <tr>
@@ -99,7 +102,10 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I check to make sure the email is legitimate before clicking any links.</td>
+            <td>
+              I check to make sure the email is legitimate before clicking any
+              links.
+            </td>
             <td>
               {" "}
               <div>
@@ -162,7 +168,9 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I make sure I am on the genuine site before entering my details.</td>
+            <td>
+              I make sure I am on the genuine site before entering my details.
+            </td>
             <td>
               {" "}
               <div>
@@ -225,7 +233,9 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I use a form of two-factor authentication for signing in to sites.</td>
+            <td>
+              I use a form of two-factor authentication for signing in to sites.
+            </td>
             <td>
               {" "}
               <div>
@@ -288,7 +298,7 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I create regular backups of my files.</td>
+            <td>I create regular backups of my files.</td>
             <td>
               {" "}
               <div>
@@ -351,7 +361,7 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I keep my social media private.</td>
+            <td>I keep my social media private.</td>
             <td>
               {" "}
               <div>
@@ -414,7 +424,7 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I keep my software updated.</td>
+            <td>I keep my software updated.</td>
             <td>
               {" "}
               <div>
@@ -477,7 +487,7 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I download only from trusted sites and platforms.</td>
+            <td>I download only from trusted sites and platforms.</td>
             <td>
               {" "}
               <div>
@@ -540,7 +550,7 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I never give out sensitive information.</td>
+            <td>I never give out sensitive information.</td>
             <td>
               {" "}
               <div>
@@ -603,7 +613,10 @@ export default function Survey() {
             </td>
           </tr>
           <tr>
-          <td>I am aware of recent data breaches and check to see if I was affected.</td>
+            <td>
+              I am aware of recent data breaches and check to see if I was
+              affected.
+            </td>
             <td>
               {" "}
               <div>
@@ -663,6 +676,11 @@ export default function Survey() {
                   onChange={handleChange}
                 />
               </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onClick={formSubmit}>Submit</button>
             </td>
           </tr>
         </tbody>
