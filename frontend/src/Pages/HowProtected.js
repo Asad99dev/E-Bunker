@@ -1,9 +1,10 @@
 import React from "react";
+import Survey from "../Components/ProtectedSurvey/Survey";
 
 function HowProtected() {
   return (
     <div className="pg-container">
-      <h1>How protected are you?</h1>
+      <Survey />
     </div>
   );
 }
