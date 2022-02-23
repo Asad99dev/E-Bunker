@@ -4,7 +4,7 @@
   background-size: 100vw auto;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -15,6 +15,21 @@
   font-family: "PT Sans", sans-serif;
   font-size: 60px;
   margin-top: 0px;
+}
+
+.bg-container > h3 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  padding: 10px 10px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.bg-container > h4 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  padding: 10px 8px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .bg-container > p {
@@ -109,12 +124,18 @@ label {
   border-radius: 50%;
 }
 
-.divider{
-  width:110px;
-  height:auto;
-  display:inline-block;
+.divider {
+  width: 110px;
+  height: auto;
+  display: inline-block;
 }
 
+.phishing-img {
+  height: 500px;
+  width: 1000px;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
 
 @media (orientation: portrait) {
   .bg-container {
@@ -125,4 +146,3 @@ label {
     background-size: auto 100vh;
   }
 }
-
