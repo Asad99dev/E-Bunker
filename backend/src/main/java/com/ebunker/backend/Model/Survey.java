@@ -11,6 +11,11 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    @MapsId
+    @JoinColumn (name = "userId")
+    private User user; 
+
     @Column
     private int q1;
 
