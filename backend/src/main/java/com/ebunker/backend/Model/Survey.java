@@ -1,5 +1,6 @@
 package com.ebunker.backend.Model;
 
+
 import javax.persistence.*;
 
 @Entity
@@ -9,12 +10,13 @@ public class Survey {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     @OneToOne
     @MapsId
-    @JoinColumn (name = "userId")
-    private User user; 
+    @JoinColumn (name = "user_id")
+    private User users; 
 
     @Column
     private int q1;
@@ -45,8 +47,11 @@ public class Survey {
 
     @Column
     private int q10;
+   
+    @Column
+    private int total;
 
-    public Survey(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10) {
+    public Survey(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, int total) {
         this.q1 = q1;
         this.q2 = q2;
         this.q3 = q3;
@@ -57,6 +62,7 @@ public class Survey {
         this.q8 = q8;
         this.q9 = q9;
         this.q10 = q10;
+        this.total = total;
 
     }
 
@@ -146,6 +152,22 @@ public class Survey {
 
     public void setQ10(int q10) {
         this.q10 = q10;
+    }
+    
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public User getUsers() {
+        return users;
+    }
+
+    public void setUsers(User users) {
+        this.users = users;
     }
 
 }
