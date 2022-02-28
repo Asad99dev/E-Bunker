@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Survey.css";
+import axios from "axios";
+
+const API_URL = "http://localhost:8080/api/survey/";
 
 export default function Survey() {
   const [state, setState] = useState({
@@ -25,7 +28,7 @@ export default function Survey() {
   function formSubmit(event) {
     event.preventDefault();
 
-    const results = {
+    const results = JSON.stringify({
       q1: parseInt(state.q1),
       q2: parseInt(state.q2),
       q3: parseInt(state.q3),
@@ -36,9 +39,20 @@ export default function Survey() {
       q8: parseInt(state.q8),
       q9: parseInt(state.q9),
       q10: parseInt(state.q10),
-    };
+    });
 
-    console.log(JSON.stringify(results));
+    return axios
+      .post(API_URL + "submit", results, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
   }
 
   return (
