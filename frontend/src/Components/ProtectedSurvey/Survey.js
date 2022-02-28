@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import "./Survey.css"
+import "./Survey.css";
+import axios from "axios";
+
+const API_URL = "http://localhost:8080/api/survey/";
 
 export default function Survey() {
   const [state, setState] = useState({
@@ -20,26 +23,36 @@ export default function Survey() {
       ...state,
       [event.target.name]: value,
     });
-
   }
 
   function formSubmit(event) {
     event.preventDefault();
 
-    const results = {
-      q1: state.q1,
-      q2: state.q2,
-      q3: state.q3,
-      q4: state.q4,
-      q5: state.q5,
-      q6: state.q6,
-      q7: state.q7,
-      q8: state.q8,
-      q9: state.q9,
-      q10: state.q10,
-    };
+    const results = JSON.stringify({
+      q1: parseInt(state.q1),
+      q2: parseInt(state.q2),
+      q3: parseInt(state.q3),
+      q4: parseInt(state.q4),
+      q5: parseInt(state.q5),
+      q6: parseInt(state.q6),
+      q7: parseInt(state.q7),
+      q8: parseInt(state.q8),
+      q9: parseInt(state.q9),
+      q10: parseInt(state.q10),
+    });
 
-    console.log(JSON.stringify(results));
+    return axios
+      .post(API_URL + "submit", results, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
   }
 
   return (

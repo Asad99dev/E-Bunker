@@ -1,5 +1,6 @@
 package com.ebunker.backend.Model;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -19,6 +20,7 @@ public class User {
     
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
 
 	@NotBlank
@@ -34,11 +36,16 @@ public class User {
 	@Size(max = 120)
 	private String password;
 
+	@OneToOne (mappedBy = "users",cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	private Survey survey;
+
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "user_roles", 
 				joinColumns = @JoinColumn(name = "user_id"), 
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
+
 
 	public User() {
 	}
@@ -87,5 +94,13 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public Survey getSurvey() {
+		return survey;
+	}
+
+	public void setSurvey(Survey survey) {
+		this.survey = survey;
 	}
 }
