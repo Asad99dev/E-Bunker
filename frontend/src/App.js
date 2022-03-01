@@ -19,6 +19,7 @@ import HowProtected from "./Pages/HowProtected.js";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile.js";
 import Dashboard from "./Pages/Dashboard";
+import Unauthorized from "./Pages/Unauthorized";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/unauthorized" element={<Unauthorized />} />
         </Routes>
 
         <Footer />
