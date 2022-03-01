@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import "./Survey.css";
 import axios from "axios";
 
+
 const API_URL = "http://localhost:8080/api/survey/";
+
+const user = JSON.parse(localStorage.getItem('user'));
 
 export default function Survey() {
   const [state, setState] = useState({
@@ -45,7 +48,8 @@ export default function Survey() {
       .post(API_URL + "submit", results, {
         headers: {
           "Content-Type": "application/json",
-        },
+          "Authorization": "Bearer " + user.accessToken
+        }
       })
       .then((res) => {
         console.log(res.data);
