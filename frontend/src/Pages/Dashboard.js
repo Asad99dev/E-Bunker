@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
-  return <div>
-      <h1>Hello</h1>
-  </div>;
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  const admin = ["ROLE_ADMIN", "ROLE_USER"];
+  const userString = user.roles.toString();
+  const adminString = admin.toString();
+
+  useEffect(() => {
+    if (userString !== adminString) {
+      navigate("/unauthorized");
+    }
+  });
+
+  return <div className="bg-container"></div>;
 }
 
 export default Dashboard;
