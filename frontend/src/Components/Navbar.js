@@ -53,6 +53,7 @@ const Navigation = () => {
               Malware
             </Link>
             
+            {currentUser && (
             <Link
               to="/protected"
               className="nav-link"
@@ -60,6 +61,7 @@ const Navigation = () => {
             >
               How protected are you?
             </Link>
+            )}
 
             {showAdminBoard && (
               <Link to="/dashboard" className="nav-link">
