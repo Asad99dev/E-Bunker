@@ -162,12 +162,6 @@ public class Survey {
         this.total = total;
     }
 
-    public User getUsers() {
-        return users;
-    }
-
-    public void setUsers(User users) {
-        this.users = users;
-    }
+   
 
 }

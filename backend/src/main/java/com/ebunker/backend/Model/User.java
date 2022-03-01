@@ -96,11 +96,5 @@ public class User {
 		this.roles = roles;
 	}
 
-	public Survey getSurvey() {
-		return survey;
-	}
-
-	public void setSurvey(Survey survey) {
-		this.survey = survey;
-	}
+	
 }
