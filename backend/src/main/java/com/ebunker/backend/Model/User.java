@@ -36,8 +36,8 @@ public class User {
 	@Size(max = 120)
 	private String password;
 
-	@OneToOne (mappedBy = "users",cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn(name = "survey_id", referencedColumnName = "id")
 	private Survey survey;
 
 	@ManyToMany(fetch = FetchType.LAZY)

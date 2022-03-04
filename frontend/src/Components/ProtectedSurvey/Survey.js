@@ -32,6 +32,7 @@ export default function Survey() {
     event.preventDefault();
 
     const results = JSON.stringify({
+      id: user.id,
       q1: parseInt(state.q1),
       q2: parseInt(state.q2),
       q3: parseInt(state.q3),
