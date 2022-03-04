@@ -9,14 +9,13 @@ import javax.persistence.*;
 public class Survey {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "id")
     private Long id;
 
     @OneToOne
     @MapsId
-    @JoinColumn (name = "user_id")
-    private User users; 
+    @JoinColumn (name = "id")
+    private User user; 
 
     @Column
     private int q1;
@@ -50,6 +49,12 @@ public class Survey {
    
     @Column
     private int total;
+
+    @PrePersist
+    @PreUpdate
+    public void calcTotal() {
+        total = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+    }
 
     public Survey(int q1, int q2, int q3, int q4, int q5, int q6, int q7, int q8, int q9, int q10, int total) {
         this.q1 = q1;

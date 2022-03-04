@@ -36,7 +36,7 @@ public class User {
 	@Size(max = 120)
 	private String password;
 
-	@OneToOne (mappedBy = "users",cascade = CascadeType.ALL)
+	@OneToOne (mappedBy = "user",cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private Survey survey;
 

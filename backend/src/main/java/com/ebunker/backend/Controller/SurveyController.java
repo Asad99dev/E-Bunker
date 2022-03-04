@@ -21,9 +21,11 @@ public class SurveyController {
     SurveyRepository surveyRepository;
 
     @PostMapping("/submit")
-    public Survey submitSurvey (@Valid @RequestBody Survey total) {
+    public String submitSurvey (@Valid @RequestBody Survey survey) {
 
-        return total;
+        surveyRepository.save(survey);
+
+        return "Submitted";
 
     }
 
