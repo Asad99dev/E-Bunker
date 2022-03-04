@@ -4,4 +4,4 @@
 
 To run this web app, clone the repository to your local device and run "npm install" in the frontend directory through the terminal. Change values in application.properties in the backend to those that match your MySQL setup.
 
-Run backendapplication.java and then do "npm start" in the frontend directory through the terminal to start the frontend. The web app should now be up and running.
+Run backendapplication.java and then do "npm start" in the frontend directory through the terminal to start the frontend. The web app should now be up and running at localhost:8081.
