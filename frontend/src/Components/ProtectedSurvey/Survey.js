@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Survey.css";
 import axios from "axios";
 
-
 const API_URL = "http://localhost:8080/api/survey/";
 
-const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem("user"));
+
+
 
 export default function Survey() {
+  const [redirect, setRedirect] = useState(false);
+  const navigate = useNavigate();
   const [state, setState] = useState({
     q1: "",
     q2: "",
@@ -31,6 +35,8 @@ export default function Survey() {
   function formSubmit(event) {
     event.preventDefault();
 
+
+
     const results = JSON.stringify({
       id: user.id,
       q1: parseInt(state.q1),
@@ -45,20 +51,31 @@ export default function Survey() {
       q10: parseInt(state.q10),
     });
 
+    console.log(results);
+
     return axios
       .post(API_URL + "submit", results, {
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer " + user.accessToken
-        }
+          Authorization: "Bearer " + user.accessToken,
+        },
       })
-      .then((res) => {
-        console.log(res.data);
+      .then((response) => {
+        console.log(response.data);
+        setRedirect(true);
       })
       .catch((error) => {
         console.log(error.data);
       });
   }
+
+  useEffect(() => {
+    (() => {
+      if (redirect) {
+        navigate("/profile");
+      }
+    })();
+  }, [redirect]);
 
   return (
     <form className="surveyForm" noValidate>
