@@ -42,39 +42,50 @@ function ProfileComponent() {
       <p>
         <strong>Email:</strong> {currentUser.email}
       </p>
- 
+
       {total <= 15 && total > 0 && (
         <p>
           <strong>Cybersecurity score: {total}/50</strong>
           <p>
-           Your cybersecurity score is quite low, we recommend you take immediate
-          action to protect your accounts and devices. Think of the things in
-          the survey you never or rarely do then try and make changes so that
-          you do them more often.
+            Your cybersecurity score is quite low, we recommend you take
+            immediate action to protect your accounts and devices. Think of the
+            things in the survey you never or rarely do then try and make
+            changes so that you do them more often.
           </p>
         </p>
       )}
-      {total > 15 && total <=35 &&(
+      {total > 15 && total <= 35 && (
         <p>
           <strong>Cybersecurity score: {total}/50</strong>
           <p>
-           You have an average cybersecurity score, you do take care to protect
-          your devices and accounts to an extent but there is room for
-          improvement. For extra peace of mind, we recommend you go through all
-          the protections you have in place and see if you can make any changes
-          to stay safer.
+            You have an average cybersecurity score, you do take care to protect
+            your devices and accounts to an extent but there is room for
+            improvement. For extra peace of mind, we recommend you go through
+            all the protections you have in place and see if you can make any
+            changes to stay safer.
           </p>
         </p>
       )}
-      {total > 35 && total <= 50 &&(
+      {total > 35 && total <= 50 && (
         <p>
           <strong>Cybersecurity score: {total}/50</strong>
           <p>
-           You have an excellent cybersecurity score, you take the utmost care in
-          protecting your accounts and devices and there is not much you can do
-          to improve. We recommend you keep this up and make sure to schedule
-          checks regularly to make sure your protections are up to date.
+            You have an excellent cybersecurity score, you take the utmost care
+            in protecting your accounts and devices and there is not much you
+            can do to improve. We recommend you keep this up and make sure to
+            schedule checks regularly to make sure your protections are up to
+            date.
           </p>
+        </p>
+      )}
+      {total > 0 && (
+        <p>
+          We determine your cybersecurity score based on your responses to the
+          "How protected are you survey" and give you suggestions depending on
+          the score. The aim is to provide users with a personalised analysis
+          depending on their cybersecurity score so users can better defend
+          themselves. Feel free to take the survey again if you wish and you can
+          see if you have improved!
         </p>
       )}
     </div>
