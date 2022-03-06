@@ -7,8 +7,6 @@ const API_URL = "http://localhost:8080/api/survey/";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-
-
 export default function Survey() {
   const [redirect, setRedirect] = useState(false);
   const navigate = useNavigate();
@@ -34,8 +32,6 @@ export default function Survey() {
 
   function formSubmit(event) {
     event.preventDefault();
-
-
 
     const results = JSON.stringify({
       id: user.id,
@@ -731,7 +727,9 @@ export default function Survey() {
           </tr>
           <tr>
             <td>
-              <button onClick={formSubmit}>Submit</button>
+              <button className="submitButton" onClick={formSubmit}>
+                Submit
+              </button>
             </td>
           </tr>
         </tbody>
