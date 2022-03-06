@@ -7,6 +7,8 @@ import com.ebunker.backend.Repository.SurveyRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +37,14 @@ public class SurveyController {
 
             return "You have an excellent cybersecurity score, you take the utmost care in protecting your accounts and devices and there is not much you can do to improve. We recommend you keep this up and make sure to schedule checks regularly to make sure your protections are up to date";
         }
+
+    }
+
+    @GetMapping("/{id}")
+    public Survey getScore(@PathVariable Long id) {
+
+        return surveyRepository.findById(id).get();
+
 
     }
 
