@@ -149,6 +149,22 @@ label {
   padding: 5px 10px;
 }
 
+.content-container {
+  background: #ffff;
+  border: solid;
+  border-color: #808080;
+  padding: 20px;
+  font-family: "PT Sans", sans-serif;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 2%;
+  border-radius: 5%;
+}
+
+.content-container > h3 {
+  font-size: 20px;
+}
+
 @media (orientation: portrait) {
   .bg-container {
     background-size: auto 100vh;

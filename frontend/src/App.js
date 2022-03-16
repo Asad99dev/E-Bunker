@@ -8,10 +8,8 @@ import Footer from "./Components/Footer";
 import About from "./Pages/About.js";
 import Malware from "./Pages/Malware.js";
 import MalwareLearn from "./Pages/MalwareLearn";
-import MalwareQuiz from "./Pages/MalwareQuiz";
 import Phishing from "./Pages/Phishing.js";
 import PhishingLearn from "./Pages/PhishingLearn.js";
-import PhishingQuiz from "./Pages/PhishingQuiz.js";
 import PhishingExamples from "./Pages/PhishingExamples.js";
 import SignIn from "./Pages/SignIn.js";
 import SignUp from "./Pages/SignUp.js";
@@ -32,10 +30,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/malware" element={<Malware />} />
           <Route path="/malware-learn" element={<MalwareLearn />} />
-          <Route path="/malware-quiz" element={<MalwareQuiz />} />
           <Route path="/phishing" element={<Phishing />} />
           <Route path="/phishing-learn" element={<PhishingLearn />} />
-          <Route path="/phishing-quiz" element={<PhishingQuiz />} />
           <Route path="/phishing-examples" element={<PhishingExamples />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/protected" element={<HowProtected />} />

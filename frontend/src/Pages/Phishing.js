@@ -12,10 +12,7 @@ function Phishing() {
         As technology continues to evolve, phishing shows no sign of slowing
         down.
       </p>
-      <p>
-        Click the link below to start learning, or if you feel up to the
-        challenge, how about taking on our quiz!
-      </p>
+      <p>Click the link below to start learning!</p>
       <div className="bg-btns">
         <Button
           className="btn-bg"
@@ -24,22 +21,11 @@ function Phishing() {
           }}
           label="Learn"
         />
-
-        <Button
-          className="btn-bg"
-          handleClick={() => {
-            navigate("/phishing-quiz");
-          }}
-          label="Quiz"
-        />
       </div>
 
       <br />
 
-      <p>
-        Click the link below to see examples of phishing and also to upload your
-        own attempts.
-      </p>
+      <p>Click the link below to see examples of phishing.</p>
       <div className="bg-btns">
         <Button
           className="btn-bg"
