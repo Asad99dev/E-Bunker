@@ -13,6 +13,8 @@ function HowProtected() {
 
   return (
     <div className="pg-container">
+    <h1>How protected are you?</h1>
+    <p>Find out your cybersecurity score by taking this quick questionnaire</p>
       <Survey />
     </div>
   );
