@@ -27,7 +27,7 @@ function PhishingExamples() {
       })
       .then((response) => {
         console.log(response.data);
-        const currentImage = response.data[1].url;
+        const currentImage = response.data;
         setImages(currentImage);
       });
   };
@@ -41,9 +41,14 @@ function PhishingExamples() {
       ) : (
         <p>Sign in to upload your own pictures</p>
       )}
-      <div>
-        <img src={images} />
-      </div>
+
+      {images.map((image) => (
+        <div className="content-container" key={image.url}>
+        <img className="phishing-img" src={image.url}/>
+        </div>
+      ))}
+
+
     </div>
   );
 }
