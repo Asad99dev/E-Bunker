@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import UploadService from "../Services/FileUploadService";
+import AuthService from "../Services/auth.service";
 
 const UploadFiles = () => {
   const [selectedFiles, setSelectedFiles] = useState(undefined);
-  const [currentFile, setCurrentFile] = useState(undefined);
-  const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState("");
   const [fileInfos, setFileInfos] = useState([]);
+  const [currentUser, setCurrentUser] = useState(undefined);
 
   const selectFile = (event) => {
     setSelectedFiles(event.target.files);
@@ -14,11 +14,8 @@ const UploadFiles = () => {
 
   const upload = () => {
     let currentFile = selectedFiles[0];
-    setProgress(0);
-    setCurrentFile(currentFile);
-    UploadService.upload(currentFile, (event) => {
-      setProgress(Math.round((100 * event.loaded) / event.total));
-    })
+
+    UploadService.upload(currentFile)
       .then((response) => {
         setMessage(response.data.message);
         return UploadService.getFiles();
@@ -27,59 +24,60 @@ const UploadFiles = () => {
         setFileInfos(files.data);
       })
       .catch(() => {
-        setProgress(0);
         setMessage("Could not upload the file!");
-        setCurrentFile(undefined);
       });
     setSelectedFiles(undefined);
   };
 
   useEffect(() => {
+    const user = AuthService.getCurrentUser();
+    if (user) {
+      setCurrentUser(user);
+    }
     UploadService.getFiles().then((response) => {
       setFileInfos(response.data);
     });
   }, []);
 
   return (
-    <div>
-      {currentFile && (
-        <div className="progress">
-          <div
-            className="progress-bar progress-bar-info progress-bar-striped"
-            role="progressbar"
-            aria-valuenow={progress}
-            aria-valuemin="0"
-            aria-valuemax="100"
-            style={{ width: progress + "%" }}
+    <div className="bg-container">
+      <br />
+      <h1>Phishing Examples</h1>
+      <h3>
+        Have a look at these user submitted images of phishing attempts and see
+        how they try and trick you
+      </h3>
+
+      {currentUser ? (
+        <>
+          <label className="btn btn-default">
+            <input type="file" onChange={selectFile} />
+          </label>
+          <button
+            className="btn-bg"
+            disabled={!selectedFiles}
+            onClick={upload}
           >
-            {progress}%
+            Upload
+          </button>
+          <br />
+          <div className="alert alert-light" role="alert">
+            {message}
           </div>
-        </div>
+        </>
+      ) : (
+        <>
+          <br />
+          <p>Sign in to upload your own pictures</p>
+        </>
       )}
-      <label className="btn btn-default">
-        <input type="file" onChange={selectFile} />
-      </label>
-      <button
-        className="btn btn-success"
-        disabled={!selectedFiles}
-        onClick={upload}
-      >
-        Upload
-      </button>
-      <div className="alert alert-light" role="alert">
-        {message}
-      </div>
-      <div className="card">
-        <div className="card-header">List of Files</div>
-        <ul className="list-group list-group-flush">
-          {fileInfos &&
-            fileInfos.map((file, index) => (
-              <li className="list-group-item" key={index}>
-                <a href={file.url}>{file.name}</a>
-              </li>
-            ))}
-        </ul>
-      </div>
+
+      {fileInfos &&
+        fileInfos.map((file) => (
+          <div className="content-container" key={file.url}>
+            <img className="phishing-img" src={file.url} />
+          </div>
+        ))}
     </div>
   );
 };
