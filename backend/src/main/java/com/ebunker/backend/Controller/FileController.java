@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import com.ebunker.backend.Message.ResponseFile;
 import com.ebunker.backend.Message.ResponseMessage;
 import com.ebunker.backend.Model.FileDB;
+import com.ebunker.backend.Repository.FileDBRepository;
 import com.ebunker.backend.Service.FileStorageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +28,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 public class FileController {
     @Autowired
     private FileStorageService storageService;
+
+    @Autowired
+    FileDBRepository fileDBRepository;
 
     @PostMapping("/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -63,5 +68,16 @@ public class FileController {
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
+    }
+
+    @DeleteMapping("/delete/files/{id}")
+    public ResponseEntity<byte[]> deleteFile(@PathVariable String id) {
+        FileDB fileDB = storageService.getFile(id);
+        fileDBRepository.deleteById(id);
+
+        return ResponseEntity.ok()
+
+                .body(fileDB.getData());
+
     }
 }
