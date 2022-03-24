@@ -56,7 +56,7 @@ public class FileController {
             return new ResponseFile(
                     dbFile.getName(),
                     fileDownloadUri,
-                    dbFile.getType(),
+                    dbFile.getId(),
                     dbFile.getData().length);
         }).collect(Collectors.toList());
         return ResponseEntity.status(HttpStatus.OK).body(files);

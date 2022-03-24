@@ -13,7 +13,6 @@ function Dashboard() {
   const admin = ["ROLE_ADMIN", "ROLE_USER"];
   const userString = user.roles.toString();
   const adminString = admin.toString();
-  
 
   useEffect(() => {
     if (userString !== adminString) {
@@ -22,6 +21,8 @@ function Dashboard() {
 
     getAllImages();
   }, []);
+
+ 
 
   const getAllImages = () => {
     axios
@@ -40,29 +41,28 @@ function Dashboard() {
       });
   };
 
-  function deleteImage(event) {
-    event.preventDefault();
-
-    return axios.delete(`http://localhost:8080/delete/files/${images.url}`, {
-      headers: {
-        Authorization: "Bearer " + currentUser.accessToken,
-      }
-    })
-    .then((response) => {
-      console.log(response.data);
-      setRefresh(true);
-    })
-    .catch((error) => {
-      console.log(error.data);
-    });
-  }
+  const deleteImage = (id) => {
+    return axios
+      .delete(`http://localhost:8080/delete/files/${id}`, {
+        headers: {
+          Authorization: "Bearer " + currentUser.accessToken,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        return getAllImages();
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
+  };
 
   return (
     <div className="bg-container">
       {images.map((image) => (
         <div className="content-container" key={image.url}>
           <p>{image.name}</p>
-          <button className="btn-bg" onClick={deleteImage}>
+          <button className="btn-bg" onClick={() => deleteImage(image.type)}>
             Delete
           </button>
         </div>
