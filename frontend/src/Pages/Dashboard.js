@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthService from "../Services/auth.service";
+import "./Dashboard.css";
 import axios from "axios";
 
 function Dashboard() {
@@ -62,7 +63,8 @@ function Dashboard() {
       {images.map((image) => (
         <div className="content-container" key={image.url}>
           <p>{image.name}</p>
-          <button className="btn-bg" onClick={() => deleteImage(image.type)}>
+          <img className="phishing-img" src={image.url} />
+          <button className="btn-db" onClick={() => deleteImage(image.type)}>
             Delete
           </button>
         </div>
