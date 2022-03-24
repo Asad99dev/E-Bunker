@@ -60,6 +60,10 @@ function Dashboard() {
 
   return (
     <div className="bg-container">
+    <br />
+    <h1>Dashboard</h1>
+    <p>Delete any unwanted content here</p>
+    <br />
       {images.map((image) => (
         <div className="content-container" key={image.url}>
           <p>{image.name}</p>
