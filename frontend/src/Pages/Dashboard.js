@@ -1,8 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthService from "../Services/auth.service";
+import "./Dashboard.css";
+import axios from "axios";
 
 function Dashboard() {
   const navigate = useNavigate();
+  const currentUser = AuthService.getCurrentUser();
+  const [images, getImages] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("user"));
   const admin = ["ROLE_ADMIN", "ROLE_USER"];
@@ -13,9 +19,62 @@ function Dashboard() {
     if (userString !== adminString) {
       navigate("/unauthorized");
     }
-  });
 
-  return <div className="bg-container"></div>;
+    getAllImages();
+  }, []);
+
+ 
+
+  const getAllImages = () => {
+    axios
+      .get(`http://localhost:8080/files`, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+        const currentImages = response.data;
+        getImages(currentImages);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
+  };
+
+  const deleteImage = (id) => {
+    return axios
+      .delete(`http://localhost:8080/delete/files/${id}`, {
+        headers: {
+          Authorization: "Bearer " + currentUser.accessToken,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        return getAllImages();
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
+  };
+
+  return (
+    <div className="bg-container">
+    <br />
+    <h1>Dashboard</h1>
+    <p>Delete any unwanted content here</p>
+    <br />
+      {images.map((image) => (
+        <div className="content-container" key={image.url}>
+          <p>{image.name}</p>
+          <img className="phishing-img" src={image.url} />
+          <button className="btn-db" onClick={() => deleteImage(image.type)}>
+            Delete
+          </button>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default Dashboard;

@@ -1,0 +1,15 @@
+.btn-db {
+  font-size: 16px;
+  background-color: transparent;
+  border: 4px solid red;
+  border-radius: 9px;
+  font-family: "PT Sans", sans-serif;
+  padding: 8px 20px;
+  transition-duration: 0.4s;
+  float: right;
+}
+
+.btn-db:hover {
+    background-color: red;
+    color: #fff;
+  }
